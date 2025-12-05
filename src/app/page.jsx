@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; 'use client'
 import { motion } from 'framer-motion';
 
 // Matriz UI/UX — Omnis Library
