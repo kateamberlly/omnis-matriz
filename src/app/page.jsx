@@ -1,24 +1,30 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Formulário</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-    }
-    .tf {
-      height: 100vh;
-    }
-  </style>
-</head>
-<body>
-  <div class="tf">
-    <div data-tf-live="01KCSNSSYVCS3VP87BNKZQGVSE"></div>
-  </div>
-  <script src="https://embed.typeform.com/next/embed.js"></script>
-</body>
-</html>
+"use client";
+
+import { useEffect } from "react";
+
+export default function Page() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://embed.typeform.com/next/embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  return (
+    <div
+      style={{
+        width: "100vw",
+        height: "100vh",
+        margin: 0,
+        padding: 0,
+        overflow: "hidden"
+      }}
+    >
+      <div data-tf-live="01KCSNSSYVCS3VP87BNKZQGVSE" />
+    </div>
+  );
+}
